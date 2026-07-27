@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2'),
+  url('/fonts/Inter-Regular.woff') format('woff'),
+  url('/fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RobotoFlex';
+  src: url('/fonts/RobotoFlex-Regular.woff2') format('woff2'),
+  url('/fonts/RobotoFlex-Regular.woff') format('woff'),
+  url('/fonts/RobotoFlex-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('/fonts/Unbounded-Bold.woff2') format('woff2'),
+  url('/fonts/Unbounded-Bold.woff') format('woff'),
+  url('/fonts/Unbounded-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('/fonts/Unbounded-ExtraBold.woff2') format('woff2'),
+  url('/fonts/Unbounded-ExtraBold.woff') format('woff'),
+  url('/fonts/Unbounded-ExtraBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('/fonts/Unbounded-ExtraLight.woff2') format('woff2'),
+  url('/fonts/Unbounded-ExtraLight.woff') format('woff'),
+  url('/fonts/Unbounded-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('/fonts/Unbounded-Light.woff2') format('woff2'),
+  url('/fonts/Unbounded-Light.woff') format('woff'),
+  url('/fonts/Unbounded-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url('/fonts/Unbounded-Medium.woff2') format('woff2'),
+  url('/fonts/Unbounded-Medium.woff') format('woff'),
+  url('/fonts/Unbounded-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
