@@ -5,11 +5,17 @@ import CustomHeader from "@/components/baseComponents/gui/customHeader/CustomHea
 import Footer from "@/components/baseComponents/gui/footer/Footer";
 import {footerContent, header} from "@/constants/copyright";
 import Intro from "@/components/intro/Intro";
+import When from "@/components/when/When";
+import About from "@/components/about/About";
+import Winner from "@/components/winner/Winner";
 
 export default function Home() {
   return (
     <>
       <Intro/>
+      <When/>
+      <About/>
+      <Winner/>
       {/*<PageDescription {...defaultPage} />*/}
       {/*<CustomHeader {...header} />*/}
       {/*<Footer {...footerContent} />*/}

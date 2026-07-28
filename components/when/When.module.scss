@@ -1,0 +1,77 @@
+@use "@styles/base" as *;
+
+.when {
+  @mixin mod($mod) {
+    @include modifier("when", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .when_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  background-color: black;
+  width: 100vw;
+  position: relative;
+
+  &__img {
+    position: absolute;
+    @include option(width, 860px, 345px, 750px);
+    @include option(top, -160px, -70px, -150px);
+    @include option(right, 10px, -7px, 70px);
+  }
+
+  &__content {
+    color: white;
+    @include option(padding, 36px 194px, 0px 22px);
+    margin: 0 auto;
+  }
+
+  &__info{
+    @include option(margin-top, 0px, 260px, 650px);
+
+    @include NOT-DESK{
+      text-align: center;
+    }
+  }
+
+  &__when {
+    @include option(font-size, 28px, 12px, 35px);
+    font-weight: $FW-BOLD;
+    @include option(margin-bottom, 70px, 24px);
+  }
+
+  &__prize{
+    @include option(margin-bottom, 78px, 10px);
+  }
+
+  &__prizeText{
+    @include option(font-size, 39px, 16px, 40px);
+    @include option(margin-bottom, 0px, 6px);
+  }
+
+  &__prizeMoney{
+    @include option(font-size, 79px, 28px, 80px);
+    font-weight: $FW-BOLD;
+    margin: 0;
+  }
+
+  &__subText{
+    @include option(font-size, 31px, 14px, 35px);
+    font-weight: $FW-LIGHT;
+    @include option(margin-bottom, 108px, 39px);
+  }
+
+  &__btn{
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__btnLightning{
+    @include option(width, 16px, 8px, 30px);
+  }
+}

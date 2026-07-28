@@ -5,13 +5,19 @@ import styles from "./Intro.module.scss";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 import {intro} from "@/constants/copyright";
 import {safeHTML} from "@PS/frontend";
+import CustomButton from "@/components/customButton/CustomButton";
 
 export default function Intro({className}) {
   return (
     <div className={classNames(styles.intro, className)}>
       <div className={styles.intro__bg}>
         <div className={classNames(styles.intro__bgImage, styles.intro__bgItem) }>
-          <Picture {...intro.bgImage} />
+          <div className={styles.intro__bgImageBase}>
+            <Picture {...intro.bgImage} />
+          </div>
+         <div className={styles.intro__bgImageAfter}>
+           <Picture {...intro.bgImage} />
+         </div>
         </div>
         <div className={classNames(styles.intro__bgMen, styles.intro__bgItem)}>
           <Picture {...intro.menImg} />
@@ -28,7 +34,7 @@ export default function Intro({className}) {
           </div>
         </div>
         <p className={styles.intro__win}>
-          <span className={styles.intro__win_b}>{safeHTML(intro.win.text)}</span>
+          <span className={styles.intro__win_l}>{safeHTML(intro.win.text)}</span>
           {safeHTML(intro.win.textBold)}
         </p>
         <div className={styles.intro__info}>
@@ -39,6 +45,9 @@ export default function Intro({className}) {
           <p className={styles.intro__infoSub}>
             {safeHTML(intro.subtitle.text)}
           </p>
+          <CustomButton href={intro.button.href} bgColor="red" textColor="white" isIcon colorIcon="white">
+            {intro.button.text}
+          </CustomButton>
         </div>
       </div>
     </div>

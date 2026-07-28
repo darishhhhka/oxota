@@ -1,0 +1,49 @@
+@use "@styles/base" as *;
+
+.winnerCard {
+  @mixin mod($mod) {
+    @include modifier("winnerCard", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .winnerCard_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(width, 367px, 328px);
+  @include option(height, 583px, 169px);
+  position: relative;
+  color: $WHITE;
+
+  &__bg{
+    @include sectionBg;
+    z-index: -1;
+  }
+
+  &__content{
+    @include option(padding, 49px 37px, 19px 13px);
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  &__title{
+    @include option(font-size, 20px, 10px);
+    font-weight: $FW-LIGHT;
+  }
+
+  &__subTitle{
+    @include option(font-size, 30px, 19px);
+    color: $RED;
+    font-weight: $FW-EXTRA_BOLD;
+  }
+
+  &__note{
+    @include option(font-size, 14px, 9px);
+    font-weight: $FW-EXTRA_LIGHT;
+    margin-top: auto;
+  }
+}

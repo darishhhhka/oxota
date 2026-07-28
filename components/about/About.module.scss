@@ -1,0 +1,53 @@
+@use "@styles/base" as *;
+
+.about {
+  @mixin mod($mod) {
+    @include modifier("about", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .about_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  position: relative;
+  background: black;
+  width: 100vw;
+
+  &__bg{
+    @include sectionBg;
+  }
+
+  &__shadowBg{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @include option(height, 601px, 170px);
+    background: linear-gradient(transparent, $RED);
+  }
+
+  &__content{
+    margin: 0 auto;
+    @include option(padding, 0px 200px 90px, 0px 16px, 0px 100px);
+    @include option(width, 1520px, 328px, 700px);
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    @include option(column-gap, 20px, 0px);
+    @include option(row-gap, 17px, 9px);
+    @include option(margin-bottom, 54px, 45px);
+    @include option(margin-top, 48px, 12px);
+  }
+
+  &__btn{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    z-index: 2;
+  }
+}

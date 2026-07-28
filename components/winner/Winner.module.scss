@@ -1,0 +1,55 @@
+@use "@styles/base" as *;
+
+.winner {
+  @mixin mod($mod) {
+    @include modifier("winner", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .winner_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  color: $WHITE;
+  position: relative;
+  width: 100vw;
+
+  &__bg{
+    @include sectionBg;
+    background-color: $BLACK;
+    z-index: -1;
+  }
+
+  &__shadowBg{
+    @include sectionBg;
+    background: linear-gradient($RED, transparent);
+  }
+
+  &__content{
+    @include option(padding, 0px 200px, 0px 16px);
+    @include option(margin, 82px auto, 0px auto);
+    //margin: 0 auto;
+  }
+
+  &__title{
+    @include option(font-size, 48px, 18px);
+    font-weight: $FW-BOLD;
+    text-transform: uppercase;
+    @include option(margin-bottom, 73px, 24px);
+  }
+
+  &__list{
+    display: flex;
+    @include option(gap, 17px);
+    @include option(margin-bottom, 121px, 65px);
+  }
+
+  &__btn{
+    display: block;
+    margin: 0 auto ;
+  }
+}

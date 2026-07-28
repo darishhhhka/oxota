@@ -1,0 +1,326 @@
+@use "@styles/base" as *;
+
+.aboutCard {
+  @mixin mod($mod) {
+    @include modifier("aboutCard", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .aboutCard_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(border-radius, 16px, 8px);
+  overflow: hidden;
+  position: relative;
+  background-color: $RED;
+  border: 1px solid white;
+  box-sizing: border-box;
+  color: $WHITE;
+  cursor: pointer;
+
+  transition: all 1s ease-in-out;
+
+  &_0 {
+    @include option(width, 596px, 328px, 700px);
+    @include option(height, 506px, 122px, 261px);
+    @include NOT-DESK{
+      &.aboutCard_open{
+        @include option(height, 0px, 498px, 830px);
+      }
+    }
+  }
+
+  &_1 {
+    @include option(width, 904px, 328px, 700px);
+    @include option(height, 506px, 253px, 542px);
+
+    @include NOT-DESK{
+      &.aboutCard_open{
+        @include option(height, 0px, 498px, 800px);
+      }
+    }
+  }
+
+  &_2 {
+    @include option(width, 596px, 328px, 700px);
+    @include option(height, 248px, 122px, 261px);
+
+    @include NOT-DESK{
+      &.aboutCard_open{
+        @include option(height, 0px, 168px, 261px);
+      }
+    }
+  }
+
+  &_3 {
+    @include option(width, 904px, 328px, 700px);
+    @include option(height, 246px, 100px, 213px);
+
+    @include NOT-DESK{
+      &.aboutCard_open{
+        @include option(height, 0px, 860px, 1560px);
+      }
+    }
+  }
+  &_open{
+
+    //height: auto;
+  }
+
+  &__cover {
+    text-transform: uppercase;
+    border: 1px solid white;
+    background: linear-gradient(to right top, #D03B2F 3%, #000000, #D03B2F 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include option(gap, 23px, 10px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    @include option(border-radius, 16px, 8px);
+
+
+    @include mod("0") {
+      flex-direction: column;
+      &:hover {
+        transform: translateX(-100%);
+      }
+    }
+
+    @include mod("1") {
+      &:hover {
+        transform: translateY(-100%);
+      }
+    }
+
+    @include mod("2") {
+
+      &:hover {
+        transform: translateY(-100%);
+      }
+    }
+
+    @include mod("3") {
+
+      &:hover {
+        transform: translateY(-100%);
+      }
+    }
+
+  }
+
+  &__coverTitle {
+    @include option(font-size, 36px, 14px);
+    font-weight: $FW-BOLD;
+    margin: 0;
+    @include option(max-width, 232px, 14px);
+
+    @include mod("1"){
+      //@include option(margin, 10px 0px 0px -46px, 14px);
+    }
+  }
+
+  &__content {
+    color: $WHITE;
+    @include mod("0") {
+      @include option(padding, 75px 51px, 30px 46px 0px 33px, 60px);
+    }
+
+    @include mod("1") {
+      @include option(padding, 60px 0px 29px 60px, 28px 0px 18px 35px, 60px);
+      @include option(max-width, 476px, 227px, 450px);
+    }
+
+    @include mod("2") {
+      @include option(padding, 47px 45px 51px 51px, 31px 12px 17px 35px);
+    }
+
+    @include mod("3") {
+      @include option(padding, 29px 55px 29px 60px, 30px 35px 26px 35px);
+
+    }
+
+    &_open {
+      @include NOT-DESK {
+        @include mod("0") {
+          @include option(height, 0px, 498px);
+        }
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__bgPhone {
+    display: none;
+    @include NOT-DESK {
+      display: block;
+    }
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include option(width, 0px, 268px, 500px);
+  }
+
+  &__bgCrown {
+    position: absolute;
+    @include DESKTOP{
+      right: 0;
+      top: 0;
+    }
+
+
+    @include option(width, 410px, 262px, 450px);
+    @include NOT-DESK{
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__bgCup {
+    @include option(width, 275px, 94px, 170px);
+    position: absolute;
+    right: 0;
+
+    @include DESKTOP{
+      bottom: 0;
+    }
+    @include NOT-DESK{
+      @include option(top, 0px, 51px, 100px);
+    }
+  }
+
+  &__list {
+    @include option(margin-bottom, 0px, 350px)
+  }
+
+  &__contentTitle {
+    @include option(font-size, 32px, 16px, 30px);
+    font-weight: $FW-BOLD;
+    margin: 0;
+    @include mod("1") {
+      @include option(max-width, 360px, 175px, 360px);
+    }
+  }
+
+  &__itemList {
+    display: flex;
+    align-items: center;
+    @include option(gap, 17px, 8px);
+  }
+
+  &__itemNumber {
+    color: $BLACK;
+    @include option(font-size, 32px, 16px, 40px);
+  }
+
+  &__wrapLine {
+    @include option(padding-bottom, 55px, 26px);
+    border-bottom: 1px solid $WHITE;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    @include option(width, 60px, 40px, 70px);
+  }
+
+  &__wrapNote {
+    @include option(margin-top, 48px, 28px);
+    @include option(width, 393px, 227px, 400px);
+    display: flex;
+    align-items: start;
+    @include option(gap, 14px, 12px);
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: $FW-LIGHT;
+    @include option(font-size, 20px, 12px, 25px);
+    @include mod("2") {
+      @include option(margin-bottom, 30px, 12px);
+
+    }
+
+    &_b {
+      font-weight: $FW-BOLD;
+    }
+
+    &_sm {
+      @include option(font-size, 16px, 12px, 20px);
+    }
+  }
+
+  &__img {
+    @include mod("0") {
+      @include option(width, 111px, 59px);
+    }
+    @include mod("1") {
+      @include option(width, 74px, 39px);
+      @include option(margin, 10px 0px 0px -50px, 12px);
+    }
+    @include mod("2") {
+      @include option(width, 74px, 38px);
+      @include option(margin, 10px 0px 0px -90px, 12px);
+    }
+    @include mod("3") {
+      @include option(width, 79px, 44px);
+      @include option(margin, 10px 0px 0px -100px, 12px);
+    }
+  }
+
+  &__list3 {
+    display: flex;
+    @include option(gap, 30px, 13px, 20px);
+    justify-content: space-between;
+
+    @include NOT-DESK{
+      flex-direction: column;
+    }
+
+    p {
+      @include option(font-size, 20px, 12px, 28px);
+      font-weight: $FW-LIGHT;
+      //@include option(max-width, 218px, 142px);
+      width: max-content;
+      margin: 0;
+
+      @include NOT-DESK{
+        &::before{
+          content: '';
+          display: inline-block;
+          @include option(width, 0px, 16px, 30px);
+          @include option(height, 0px, 12px, 22px);
+          background: url("/images/about/check.svg") no-repeat center/cover;
+          @include option(margin-right, 0px, 6px, 10px);
+        }
+      }
+    }
+  }
+
+  &__tableImg {
+    @include option(width, 784px, 258px, 500px);
+    @include option(margin, 29px auto);
+  }
+}
+
+
+
+

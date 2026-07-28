@@ -29,8 +29,8 @@
 
   &__bgBottomShadow{
     width: 100%;
-    @include option(height, 475px);
-    @include option(top, 707px, 387px, 1500px);
+    @include option(height, 681px);
+    @include option(top, 484px, 387px, 1500px);
     background: linear-gradient(to top, #000000, transparent);
   }
 
@@ -40,13 +40,24 @@
     @include option(top, 301px, 164px, 490px);
     left: 50%;
     transform: translateX(-50%);
+
+  }
+
+  &__bgImageBase, &__bgImageAfter{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__bgImageA fter{
+    @include option(left, -8px);
   }
 
   &__bgMen{
     @include option(width, 510px, 266px, 800px);
     @include option(top, 94px, 138px, 400px);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-54%);
   }
 
   &__content{
@@ -72,7 +83,7 @@
   }
 
   &__info{
-    @include option(margin-top, 699px, 430px, 1000px);
+    @include option(margin-top, 579px, 280px, 1000px);
     text-align: center;
     text-transform: uppercase;
   }
@@ -90,6 +101,8 @@
 
   &__infoSub{
     @include option(font-size, 36px, 14px, 50px);
+    font-weight: $FW-LIGHT;
+    @include option(margin-bottom, 42px, 30px);
   }
 
   &__win{
@@ -105,8 +118,12 @@
       text-align: right;
     }
 
-    &_b{
-      font-weight: $FW-NORMAL;
+    &_l{
+      font-weight: $FW-LIGHT;
     }
+  }
+
+  &__btnLightning{
+    @include option(width, 16px, 8px, 30px);
   }
 }
