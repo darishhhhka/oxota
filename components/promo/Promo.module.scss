@@ -1,0 +1,61 @@
+@use "@styles/base" as *;
+
+.promo {
+  @mixin mod($mod) {
+    @include modifier("promo", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .promo_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  width: 100vw;
+  position: relative;
+
+  &__bg {
+    @include sectionBg;
+    background: $RED;
+    z-index: -1;
+  }
+
+  &__shadowBg{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @include option(height, 444px, 0px);
+    background: linear-gradient(transparent, $BLACK);
+  }
+
+  &__content {
+    @include option(width, 1202px, 328px, 700px);
+    @include option(margin, 80px auto, 25px auto);
+  }
+
+  &__title {
+    text-align: center;
+    @include option(max-width, 1000px, 200px, 500px);
+    margin: 0 auto;
+  }
+
+  &__videoWrap {
+    width: 100%;
+    @include option(margin-top, 58px, 22px);
+  }
+
+  &__video {
+    width: 100%;
+    @include option(border-radius, 16px, 8px);
+
+  }
+
+  &__btn {
+    @include option(margin, 58px auto 65px, 28px auto 59px);
+    display: block;
+  }
+
+}

@@ -14,36 +14,50 @@
     }
   }
 
-  @include option(width, 367px, 328px);
-  @include option(height, 583px, 169px);
+  @include option(width, 367px, 328px, 700px);
+  @include option(height, 583px, 169px, 360px);
   position: relative;
   color: $WHITE;
 
   &__bg{
     @include sectionBg;
-    z-index: -1;
+    //z-index: -1;
   }
 
   &__content{
-    @include option(padding, 49px 37px, 19px 13px);
+    @include option(padding, 35px 37px 20px, 19px 13px 8px);
     box-sizing: border-box;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    @include NOT-DESK{
+      align-items: end;
+      text-align: start;
+    }
   }
 
   &__title{
-    @include option(font-size, 20px, 10px);
+    @include option(font-size, 20px, 10px, 25px);
     font-weight: $FW-LIGHT;
+    @include option(margin-bottom, 8px, 2px, 10px);
   }
 
   &__subTitle{
-    @include option(font-size, 30px, 19px);
+    @include option(font-size, 30px, 19px, 40px);
     color: $RED;
     font-weight: $FW-EXTRA_BOLD;
+    margin: 0;
   }
 
   &__note{
-    @include option(font-size, 14px, 9px);
+    @include option(font-size, 14px, 9px, 15px);
     font-weight: $FW-EXTRA_LIGHT;
     margin-top: auto;
+    @include NOT-DESK{
+      margin: 0 auto;
+      margin-top: auto;
+    }
   }
 }

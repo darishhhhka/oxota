@@ -92,32 +92,46 @@
     @include option(border-radius, 16px, 8px);
 
 
-    @include mod("0") {
-      flex-direction: column;
-      &:hover {
-        transform: translateX(-100%);
-      }
-    }
-
-    @include mod("1") {
-      &:hover {
+    @include NOT-DESK{
+      &_open{
         transform: translateY(-100%);
       }
     }
 
-    @include mod("2") {
+    @include DESKTOP{
+      @include mod("0") {
+        flex-direction: column;
+        &:hover {
+          transform: translateX(-100%);
+        }
+      }
 
-      &:hover {
-        transform: translateY(-100%);
+      @include mod("1") {
+        &:hover {
+          transform: translateY(-100%);
+        }
+      }
+
+      @include mod("2") {
+
+        &:hover {
+          transform: translateY(-100%);
+        }
+      }
+
+      @include mod("3") {
+
+        &:hover {
+          transform: translateY(-100%);
+        }
       }
     }
 
-    @include mod("3") {
 
-      &:hover {
-        transform: translateY(-100%);
-      }
-    }
+
+    //&:hover{
+    //  @include mod("1")
+    //}
 
   }
 
@@ -127,8 +141,8 @@
     margin: 0;
     @include option(max-width, 232px, 14px);
 
-    @include mod("1"){
-      //@include option(margin, 10px 0px 0px -46px, 14px);
+    @include mod("3"){
+      @include option(width, 390px);
     }
   }
 

@@ -10,8 +10,10 @@ export default function WinnerCard({className, title, subTitle, bgImg, note, ind
     <div className={classNames(styles.winnerCard, className)}>
       <div className={styles.winnerCard__bg}><Picture {...bgImg}/></div>
       <div className={styles.winnerCard__content}>
-        <p className={styles.winnerCard__title}>{safeHTML(title)}</p>
-        <p className={styles.winnerCard__subTitle}>{safeHTML(subTitle)}</p>
+        <div className={styles.winnerCard__header}>
+          <p className={styles.winnerCard__title}>{safeHTML(title)}</p>
+          <p className={styles.winnerCard__subTitle}>{safeHTML(subTitle)}</p>
+        </div>
         <p className={styles.winnerCard__note}>{safeHTML(note)}</p>
       </div>
     </div>

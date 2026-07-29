@@ -1,0 +1,70 @@
+@use "@styles/base" as *;
+
+.appCard {
+  @mixin mod($mod) {
+    @include modifier("appCard", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .appCard_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  --size-circle: 450px;
+  @include option(width, 750px, 328px, 700px);
+  @include option(height, 315px, 140px,  299px);
+  @include option(border-radius, 16px, 8px);
+  border: 1px solid $WHITE;
+  @include option(--size-circle, 450px, 200px);
+  background: radial-gradient(circle var(--size-circle) at left bottom, $RED, $BLACK);
+  color: $WHITE;
+  box-sizing: border-box;
+
+  &__content{
+    @include option(padding, 30px 56px, 10px 28px, 35px);
+  }
+
+  &__header{
+    display: flex;
+    align-items: center;
+    @include option(gap, 15px, 6px);
+  }
+
+  &__title{
+    @include option(font-size, 32px, 14px, 32px);
+    font-weight: $FW-BOLD;
+    margin: 0;
+  }
+
+  &__icon{
+    @include option(margin-left, -10px);
+    @include mod("0"){
+      @include option(width, 75px, 45px, 80px);
+    }
+
+    @include mod("1"){
+      @include option(width, 75px, 40px, 80px);
+    }
+
+    @include mod("2"){
+      @include option(width, 70px, 40px, 80px);
+    }
+
+    @include mod("3"){
+      @include option(margin-top, -10px, 0px);
+      @include option(width, 66px, 33px, 70px);
+    }
+  }
+
+  &__description{
+    @include option(font-size, 20px, 9px, 20px);
+    @include option(line-height, 30px, 13px, 30px);
+    font-weight: $FW-LIGHT;
+    margin: 0;
+    @include option(margin-top, 10px)
+  }
+}

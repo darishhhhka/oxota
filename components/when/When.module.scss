@@ -42,7 +42,7 @@
   &__when {
     @include option(font-size, 28px, 12px, 35px);
     font-weight: $FW-BOLD;
-    @include option(margin-bottom, 70px, 24px);
+    @include option(margin-bottom, 75px, 24px);
   }
 
   &__prize{
@@ -55,6 +55,7 @@
   }
 
   &__prizeMoney{
+    @include option(margin, 6px 0px 10px, 0px);
     @include option(font-size, 79px, 28px, 80px);
     font-weight: $FW-BOLD;
     margin: 0;
@@ -63,7 +64,7 @@
   &__subText{
     @include option(font-size, 31px, 14px, 35px);
     font-weight: $FW-LIGHT;
-    @include option(margin-bottom, 108px, 39px);
+    @include option(margin-bottom, 99px, 39px);
   }
 
   &__btn{

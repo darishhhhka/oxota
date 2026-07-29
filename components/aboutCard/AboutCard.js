@@ -84,7 +84,7 @@ export default function AboutCard({className, index, title, icon, content}) {
           </div>
         </div>
       )}
-      <div className={styles.aboutCard__cover}>
+      <div className={classNames(styles.aboutCard__cover, isOpen && styles.aboutCard__cover_open) }>
         <div className={styles.aboutCard__img}>
           <Picture {...icon} />
         </div>

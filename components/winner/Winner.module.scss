@@ -26,26 +26,66 @@
 
   &__shadowBg{
     @include sectionBg;
-    background: linear-gradient($RED, transparent);
+    background: linear-gradient($RED 70%, transparent);
   }
 
   &__content{
     @include option(padding, 0px 200px, 0px 16px);
-    @include option(margin, 82px auto, 0px auto);
+    @include option(margin, 73px auto, 20px auto, 70px auto);
     //margin: 0 auto;
   }
 
   &__title{
-    @include option(font-size, 48px, 18px);
-    font-weight: $FW-BOLD;
-    text-transform: uppercase;
-    @include option(margin-bottom, 73px, 24px);
+    //@include option(margin-bottom, 73px, 20px);
+    @include NOT-DESK{
+      text-align: center;
+    }
   }
 
   &__list{
     display: flex;
-    @include option(gap, 17px);
-    @include option(margin-bottom, 121px, 65px);
+    @include option(gap, 17px, 17px, 30px);
+    @include option(margin, 70px 0px 121px 0px, 24px 0px 25px 0px, 90px 0px 70px 0px);
+
+    &_desk{
+      @include NOT-DESK{
+        display: none;
+      }
+    }
+
+    &_mob{
+      display: flex;
+      flex-direction: column;
+
+      @include DESKTOP{
+        display: none;
+      }
+    }
+  }
+
+  &__swiper{
+    @include option(width, 0px, 328px, 700px);
+  }
+
+  &__navigation{
+    //@include option(margin, 0px, 26px auto 0px, 35px auto);
+    margin: 0 auto;
+  }
+
+  &__arrow{
+    display: inline-block;
+    @include option(width, 0px, 62px, 150px);
+    margin: 0;
+
+    @include DESKTOP{
+      display: none;
+    }
+
+
+    &_left{
+      transform: rotate(180deg);
+      @include option(margin-right, 0px, 9px, 20px);
+    }
   }
 
   &__btn{

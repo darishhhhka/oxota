@@ -1,0 +1,22 @@
+@use "@styles/base" as *;
+
+.title {
+  @mixin mod($mod) {
+    @include modifier("title", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .title_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(font-size, 48px, 18px, 48px);
+  font-weight: $FW-BOLD;
+  color: $WHITE;
+  text-transform: uppercase;
+  margin: 0;
+}

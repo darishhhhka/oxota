@@ -36,6 +36,7 @@
 
   &__bgImage{
     @include option(width, 1520px, 263px, 900px);
+    @include option(height, 598px, 226px, 775px);
     position: absolute;
     @include option(top, 301px, 164px, 490px);
     left: 50%;
@@ -49,8 +50,9 @@
     width: 100%;
   }
 
-  &__bgImageA fter{
+  &__bgImageAfter{
     @include option(left, -8px);
+    animation: glitch1 8s infinite;
   }
 
   &__bgMen{
@@ -102,7 +104,8 @@
   &__infoSub{
     @include option(font-size, 36px, 14px, 50px);
     font-weight: $FW-LIGHT;
-    @include option(margin-bottom, 42px, 30px);
+    @include option(margin-bottom, 48px, 30px);
+    @include option(margin-top, 30px, 30px);
   }
 
   &__win{
@@ -119,7 +122,9 @@
     }
 
     &_l{
+      display: block;
       font-weight: $FW-LIGHT;
+      @include option(margin-bottom, 8px, 0px);
     }
   }
 
@@ -127,3 +132,34 @@
     @include option(width, 16px, 8px, 30px);
   }
 }
+
+@keyframes glitch1 {
+  from{
+    clip: rect(570px, 1520px, 598px, 0);
+  }
+  10%{
+    clip: rect(300px, 1520px, 310px, 0);
+  }
+  20%{
+    clip: rect(590px, 1520px, 598px, 0);
+  }
+  60%{
+    clip: rect(0px, 1520px, 18px, 0);
+  }
+  60.01%{
+    clip: rect(300px, 1520px, 400px, 0);
+  }
+  80%{
+    clip: rect(300px, 1520px, 400px, 0);
+  }
+  80.01%{
+    clip: rect(400px, 1520px, 560px, 0);
+  }
+  99%{
+    clip: rect(400px, 1520px, 560px, 0);
+  }
+  to{
+    clip: rect(0px, 1520px, 0px, 0);
+  }
+}
+
