@@ -27,8 +27,48 @@
   overflow: hidden;
   position: relative;
 
+  &:hover {
+    background-color: $RED;
+  }
+
+  @include mod("text_black") {
+    &:hover {
+      color: $WHITE;
+    }
+  }
+
+  @include mod("text_red") {
+    &:hover {
+      color: $WHITE;
+    }
+  }
+
+  @include mod("bg_red") {
+    &:hover {
+      background-color: $WHITE;
+    }
+  }
+
+  @include mod("bg_white") {
+    &:hover {
+      background-color: $RED;
+    }
+  }
+
+  @include mod("text_red") {
+    &:hover {
+      color: $WHITE;
+    }
+  }
+
+  @include mod("text_white") {
+    &:hover {
+      color: $RED;
+    }
+  }
+
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
     position: absolute;
     top: 0;
@@ -47,11 +87,11 @@
   }
 
   &_text_red {
-    color: #D03B2F;
+    color: #d03b2f;
   }
 
   &_bg_red {
-    background-color: #D03B2F;
+    background-color: #d03b2f;
   }
 
   &_bg_white {
@@ -74,14 +114,13 @@
 }
 
 @keyframes shineButton {
-  from{
+  from {
     transform: translateX(-200%);
   }
-  20%{
+  20% {
     transform: translateX(100%);
   }
-  to{
+  to {
     transform: translateX(100%);
   }
-
 }

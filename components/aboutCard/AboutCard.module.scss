@@ -25,11 +25,27 @@
 
   transition: all 1s ease-in-out;
 
+  @include DESKTOP {
+    &:hover {
+      & > .aboutCard__cover {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
   &_0 {
+    @include DESKTOP {
+      &:hover {
+        & > .aboutCard__cover {
+          transform: translateX(-100%);
+        }
+      }
+    }
+
     @include option(width, 596px, 328px, 700px);
     @include option(height, 506px, 122px, 261px);
-    @include NOT-DESK{
-      &.aboutCard_open{
+    @include NOT-DESK {
+      &.aboutCard_open {
         @include option(height, 0px, 498px, 830px);
       }
     }
@@ -39,8 +55,8 @@
     @include option(width, 904px, 328px, 700px);
     @include option(height, 506px, 253px, 542px);
 
-    @include NOT-DESK{
-      &.aboutCard_open{
+    @include NOT-DESK {
+      &.aboutCard_open {
         @include option(height, 0px, 498px, 800px);
       }
     }
@@ -48,10 +64,11 @@
 
   &_2 {
     @include option(width, 596px, 328px, 700px);
-    @include option(height, 248px, 122px, 261px);
+    @include option(height, 246px, 100px, 213px);
 
-    @include NOT-DESK{
-      &.aboutCard_open{
+    @include NOT-DESK {
+      order: 4;
+      &.aboutCard_open {
         @include option(height, 0px, 168px, 261px);
       }
     }
@@ -59,23 +76,23 @@
 
   &_3 {
     @include option(width, 904px, 328px, 700px);
-    @include option(height, 246px, 100px, 213px);
+    @include option(height, 248px, 122px, 261px);
 
-    @include NOT-DESK{
-      &.aboutCard_open{
-        @include option(height, 0px, 860px, 1560px);
+    @include NOT-DESK {
+      &.aboutCard_open {
+        @include option(height, 0px, 860px, 1600px);
       }
     }
   }
-  &_open{
 
+  &_open {
     //height: auto;
   }
 
   &__cover {
     text-transform: uppercase;
     border: 1px solid white;
-    background: linear-gradient(to right top, #D03B2F 3%, #000000, #D03B2F 100%);
+    background: linear-gradient(to right top, #d03b2f 3%, #000000, #d03b2f 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,70 +108,45 @@
     transition: transform 0.3s ease-in-out;
     @include option(border-radius, 16px, 8px);
 
-
-    @include NOT-DESK{
-      &_open{
+    @include NOT-DESK {
+      &_open {
         transform: translateY(-100%);
       }
     }
 
-    @include DESKTOP{
+    @include DESKTOP {
       @include mod("0") {
         flex-direction: column;
         &:hover {
-          transform: translateX(-100%);
-        }
-      }
-
-      @include mod("1") {
-        &:hover {
-          transform: translateY(-100%);
-        }
-      }
-
-      @include mod("2") {
-
-        &:hover {
-          transform: translateY(-100%);
-        }
-      }
-
-      @include mod("3") {
-
-        &:hover {
-          transform: translateY(-100%);
+          //animation: openCardLeft 1s ease-in-out;
         }
       }
     }
-
-
-
-    //&:hover{
-    //  @include mod("1")
-    //}
-
   }
 
   &__coverTitle {
-    @include option(font-size, 36px, 14px);
+    @include option(font-size, 36px, 14px, 30px);
     font-weight: $FW-BOLD;
     margin: 0;
-    @include option(max-width, 232px, 14px);
+    @include option(max-width, 370px, 182px, 300px);
+    //width: min-content;
 
-    @include mod("3"){
-      @include option(width, 390px);
+    @include mod("0") {
+      @include DESKTOP {
+        text-align: center;
+      }
     }
   }
 
   &__content {
     color: $WHITE;
     @include mod("0") {
-      @include option(padding, 75px 51px, 30px 46px 0px 33px, 60px);
+      @include option(padding, 75px 31px 75px 51px, 30px 46px 0px 33px, 60px);
     }
 
     @include mod("1") {
       @include option(padding, 60px 0px 29px 60px, 28px 0px 18px 35px, 60px);
-      @include option(max-width, 476px, 227px, 450px);
+      @include option(max-width, 476px, 206px, 450px);
     }
 
     @include mod("2") {
@@ -163,7 +155,9 @@
 
     @include mod("3") {
       @include option(padding, 29px 55px 29px 60px, 30px 35px 26px 35px);
-
+      & > .aboutCard__text_b {
+        @include option(margin-top, 0px, 20px);
+      }
     }
 
     &_open {
@@ -191,19 +185,18 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    @include option(width, 0px, 268px, 500px);
+    @include option(width, 0px, 325px, 500px);
   }
 
   &__bgCrown {
     position: absolute;
-    @include DESKTOP{
+    @include DESKTOP {
       right: 0;
       top: 0;
     }
 
-
     @include option(width, 410px, 262px, 450px);
-    @include NOT-DESK{
+    @include NOT-DESK {
       bottom: 0;
       left: 0;
     }
@@ -212,18 +205,29 @@
   &__bgCup {
     @include option(width, 275px, 94px, 170px);
     position: absolute;
-    right: 0;
 
-    @include DESKTOP{
+    @include option(right, 50px, 0px, 0px);
+
+    @include DESKTOP {
       bottom: 0;
     }
-    @include NOT-DESK{
+    @include NOT-DESK {
       @include option(top, 0px, 51px, 100px);
     }
   }
 
+  margin: 0 auto;
+
   &__list {
-    @include option(margin-bottom, 0px, 350px)
+    @include option(margin-bottom, 0px, 350px);
+    @include option(margin-top, 48px, 35px);
+    display: flex;
+    flex-direction: column;
+    @include option(gap, 30px, 12px);
+
+    p {
+      margin: 0;
+    }
   }
 
   &__contentTitle {
@@ -231,7 +235,7 @@
     font-weight: $FW-BOLD;
     margin: 0;
     @include mod("1") {
-      @include option(max-width, 360px, 175px, 360px);
+      @include option(max-width, 360px, 206px, 360px);
     }
   }
 
@@ -249,6 +253,11 @@
   &__wrapLine {
     @include option(padding-bottom, 55px, 26px);
     border-bottom: 1px solid $WHITE;
+
+    & > .aboutCard__text {
+      @include option(margin-top, 30px, 20px);
+      line-height: 149%;
+    }
   }
 
   &__icon {
@@ -256,12 +265,28 @@
     @include option(width, 60px, 40px, 70px);
   }
 
+  &__note {
+    @include option(font-size, 9px);
+    font-weight: $FW-EXTRA_LIGHT;
+    margin: 0;
+    margin-top: auto;
+  }
+
   &__wrapNote {
-    @include option(margin-top, 48px, 28px);
+    @include option(margin-top, 30px, 28px);
+    @include option(margin-left, -10px, 0px);
     @include option(width, 393px, 227px, 400px);
     display: flex;
     align-items: start;
     @include option(gap, 14px, 12px);
+  }
+
+  &__wrapNoteText {
+    display: flex;
+    flex-direction: column;
+    & > .aboutCard__text {
+      @include option(margin-top, 20px, 0px);
+    }
   }
 
   &__text {
@@ -270,11 +295,15 @@
     @include option(font-size, 20px, 12px, 25px);
     @include mod("2") {
       @include option(margin-bottom, 30px, 12px);
+    }
 
+    @include mod("1") {
     }
 
     &_b {
       font-weight: $FW-BOLD;
+      margin: 0;
+      @include option(font-size, 20px, 12px);
     }
 
     &_sm {
@@ -284,19 +313,19 @@
 
   &__img {
     @include mod("0") {
-      @include option(width, 111px, 59px);
+      @include option(width, 111px, 59px, 100px);
     }
     @include mod("1") {
-      @include option(width, 74px, 39px);
-      @include option(margin, 10px 0px 0px -50px, 12px);
+      @include option(width, 74px, 39px, 100px);
+      @include option(margin, -10px 0px 0px 85px, 0px 0px 0px 65px);
     }
     @include mod("2") {
-      @include option(width, 74px, 38px);
-      @include option(margin, 10px 0px 0px -90px, 12px);
+      @include option(width, 74px, 48px, 100px);
+      @include option(margin, 0px 0px 0px 40px, 0px 0px 0px 32px);
     }
     @include mod("3") {
-      @include option(width, 79px, 44px);
-      @include option(margin, 10px 0px 0px -100px, 12px);
+      @include option(width, 74px, 40px, 90px);
+      //@include option(margin, 0px 0px 0px 0px, 20px 0px 0px 0px);
     }
   }
 
@@ -305,7 +334,7 @@
     @include option(gap, 30px, 13px, 20px);
     justify-content: space-between;
 
-    @include NOT-DESK{
+    @include NOT-DESK {
       flex-direction: column;
     }
 
@@ -313,12 +342,13 @@
       @include option(font-size, 20px, 12px, 28px);
       font-weight: $FW-LIGHT;
       //@include option(max-width, 218px, 142px);
-      width: max-content;
+      @include option(width, 100px, 164px, 500px);
+      //width: max-content;
       margin: 0;
 
-      @include NOT-DESK{
-        &::before{
-          content: '';
+      @include NOT-DESK {
+        &::before {
+          content: "";
           display: inline-block;
           @include option(width, 0px, 16px, 30px);
           @include option(height, 0px, 12px, 22px);
@@ -331,10 +361,15 @@
 
   &__tableImg {
     @include option(width, 784px, 258px, 500px);
-    @include option(margin, 29px auto);
+    @include option(margin, 20xp auto, 38px auto);
   }
 }
 
-
-
-
+@keyframes openCardLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

@@ -11,8 +11,8 @@ import {lightning} from "@/constants/copyright";
 
 const CustomButton = forwardRef(function (
   {
-    bgColor="white",
-    textColor="red",
+    bgColor = "white",
+    textColor = "red",
     isIcon = true,
     colorIcon = "red",
     className,
@@ -71,8 +71,12 @@ const CustomButton = forwardRef(function (
       target={target}
       {...rest}
     >
-      <a className={styles.customButton__link} href={href}>
-        {isIcon && (<div className={styles.customButton__icon}><Picture {...iconLightning}/></div>)}
+      <a className={styles.customButton__link} href="http://stoloto.ru/" target="_blank">
+        {isIcon && (
+          <div className={styles.customButton__icon}>
+            <Picture {...iconLightning} />
+          </div>
+        )}
         {children}
       </a>
     </Button>

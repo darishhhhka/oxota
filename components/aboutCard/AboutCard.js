@@ -17,10 +17,10 @@ export default function AboutCard({className, index, title, icon, content}) {
         <>
           <div className={styles.aboutCard__bg}>
             <div className={styles.aboutCard__bgPhone}>
-              <Picture {...content.bgPhone}/>
+              <Picture {...content.bgPhone} />
             </div>
           </div>
-          <div className={classNames(styles.aboutCard__content, )}>
+          <div className={classNames(styles.aboutCard__content)}>
             <p className={styles.aboutCard__contentTitle}>{safeHTML(content.title)}</p>
             <div className={styles.aboutCard__list}>
               {content.list.map((item, index) => (
@@ -57,13 +57,14 @@ export default function AboutCard({className, index, title, icon, content}) {
               <div className={styles.aboutCard__icon}>
                 <Picture {...content.icon} />
               </div>
-              <div>
+              <div classNamt={styles.aboutCard__wrapNoteText}>
                 <p className={classNames(styles.aboutCard__text, styles.aboutCard__text_b)}>
                   {safeHTML(content.subtext.title)}
                 </p>
                 <p className={classNames(styles.aboutCard__text_sm, styles.aboutCard__text)}>
                   {safeHTML(content.subtext.description)}
                 </p>
+                <p className={styles.aboutCard__note}>{safeHTML(content.note)}</p>
               </div>
             </div>
           </div>
@@ -84,7 +85,7 @@ export default function AboutCard({className, index, title, icon, content}) {
           </div>
         </div>
       )}
-      <div className={classNames(styles.aboutCard__cover, isOpen && styles.aboutCard__cover_open) }>
+      <div className={classNames(styles.aboutCard__cover, isOpen && styles.aboutCard__cover_open)}>
         <div className={styles.aboutCard__img}>
           <Picture {...icon} />
         </div>

@@ -4,13 +4,13 @@ export const NOT_MOB = 1024;
 export const TABLET_W = 768;
 
 export const IPHONE_6_SIZE = {
-  width: 375,
-  height: 668,
+  width: 360,
+  height: 675,
 };
 
 export const MACBOOK_SIZE = {
-  width: 1280,
-  height: 720,
+  width: 1920,
+  height: 1095,
 };
 
 export const CLASSES = {
@@ -44,7 +44,7 @@ export function getRules({width, height}) {
   const ratio = width / height;
 
   return {
-    isDesktop: width < DESK_B && ratio > MACBOOK_SIZE.width / MACBOOK_SIZE.height,
+    isDesktop: ratio > MACBOOK_SIZE.width / MACBOOK_SIZE.height,
     isMobile: ratio > IPHONE_6_SIZE.width / IPHONE_6_SIZE.height,
     ratio,
   };

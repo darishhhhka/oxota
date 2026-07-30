@@ -23,9 +23,9 @@
     z-index: -1;
   }
 
-  &__shadowBg{
+  &__shadowBg {
     position: absolute;
-    bottom: 0;
+    @include option(bottom, -1px);
     width: 100%;
     @include option(height, 444px, 0px);
     background: linear-gradient(transparent, $BLACK);
@@ -33,11 +33,12 @@
 
   &__content {
     @include option(width, 1202px, 328px, 700px);
-    @include option(margin, 80px auto, 25px auto);
+    @include option(margin, 80px auto, 16px auto);
   }
 
   &__title {
     text-align: center;
+    //width: 90%;
     @include option(max-width, 1000px, 200px, 500px);
     margin: 0 auto;
   }
@@ -50,12 +51,10 @@
   &__video {
     width: 100%;
     @include option(border-radius, 16px, 8px);
-
   }
 
   &__btn {
-    @include option(margin, 58px auto 65px, 28px auto 59px);
+    @include option(margin, 58px auto 65px, 30px auto 59px);
     display: block;
   }
-
 }

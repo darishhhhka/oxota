@@ -17,79 +17,88 @@
   color: $WHITE;
   position: relative;
   width: 100vw;
-
-  &__bg{
+  //@include option(top, -4px);
+  &__bg {
     @include sectionBg;
+    @include option(top, -5px);
     background-color: $BLACK;
     z-index: -1;
   }
 
-  &__shadowBg{
-    @include sectionBg;
+  &__shadowBg {
+    position: absolute;
+    @include option(bottom, -1px);
+    width: 100%;
+    height: 100%;
+    //@include sectionBg;
     background: linear-gradient($RED 70%, transparent);
   }
 
-  &__content{
+  &__content {
     @include option(padding, 0px 200px, 0px 16px);
     @include option(margin, 73px auto, 20px auto, 70px auto);
+    @include option(width, 1520px, 328px, 700px);
     //margin: 0 auto;
   }
 
-  &__title{
+  &__title {
+    @include option(width, 900px, 187px, 500px);
     //@include option(margin-bottom, 73px, 20px);
-    @include NOT-DESK{
+    display: block;
+
+    @include NOT-DESK {
       text-align: center;
+      margin: 0 auto;
     }
   }
 
-  &__list{
+  &__list {
     display: flex;
     @include option(gap, 17px, 17px, 30px);
-    @include option(margin, 70px 0px 121px 0px, 24px 0px 25px 0px, 90px 0px 70px 0px);
+    @include option(margin, 70px 0px 123px 0px, 24px 0px 25px 0px, 90px 0px 70px 0px);
 
-    &_desk{
-      @include NOT-DESK{
+    &_desk {
+      @include NOT-DESK {
         display: none;
       }
     }
 
-    &_mob{
+    &_mob {
       display: flex;
       flex-direction: column;
 
-      @include DESKTOP{
+      @include DESKTOP {
         display: none;
       }
     }
   }
 
-  &__swiper{
+  &__swiper {
     @include option(width, 0px, 328px, 700px);
   }
 
-  &__navigation{
+  &__navigation {
     //@include option(margin, 0px, 26px auto 0px, 35px auto);
     margin: 0 auto;
   }
 
-  &__arrow{
+  &__arrow {
     display: inline-block;
     @include option(width, 0px, 62px, 150px);
     margin: 0;
 
-    @include DESKTOP{
+    @include DESKTOP {
       display: none;
     }
 
-
-    &_left{
+    &_left {
       transform: rotate(180deg);
       @include option(margin-right, 0px, 9px, 20px);
     }
   }
 
-  &__btn{
+  &__btn {
     display: block;
-    margin: 0 auto ;
+    margin: 0 auto;
   }
 }

@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types";
 import Scrollbar from "react-scrollbars-custom";
 import classNames from "classnames";
 import scroll from "./Scroll.module.scss";
-import {defaultProps} from "@/constants/scrollbar-settings";
+// import {defaultProps} from "@/constants/scrollbar-settings";
 
 const Scroll = React.forwardRef(function Scroll(
   {mod, update, children, onScroll, resetRef, showShadow = false, ...settings},
@@ -36,7 +36,6 @@ const Scroll = React.forwardRef(function Scroll(
       <Scrollbar
         className={scroll.scroll}
         removeTracksWhenNotUsed={true}
-        {...defaultProps}
         {...settings}
         onUpdate={handleUpdate}
         onScroll={onScroll}

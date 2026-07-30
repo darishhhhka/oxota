@@ -1,7 +1,7 @@
 const {project_id: PID, name, title} = require("../package");
 
 const defaultPage = {
-  title,
+  title: "привет",
   description: `${PID} ${title}`,
   og: {
     // image: "images/share/base.png",

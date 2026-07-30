@@ -15,36 +15,39 @@
   }
 
   position: relative;
-  background: black;
+  background: $RED;
   width: 100vw;
 
-  &__bg{
+  &__bg {
     @include sectionBg;
   }
 
-  &__shadowBg{
+  &__shadowBg {
     position: absolute;
-    bottom: 0;
+    @include option(top, -2px);
+    //bottom: 0;
     width: 100%;
-    @include option(height, 601px, 170px);
-    background: linear-gradient(transparent, $RED);
+    height: 100%;
+    //@include option(height, 601px, 170px);
+    background: linear-gradient($BLACK 60%, transparent);
   }
 
-  &__content{
+  &__content {
+    //@include option(0px auto 0px, 0px auto 10px);
     margin: 0 auto;
     @include option(padding, 0px 200px 100px, 0px 16px 20px, 0px 100px);
     @include option(width, 1520px, 328px, 700px);
   }
-  &__list{
+  &__list {
     display: flex;
     flex-wrap: wrap;
     @include option(column-gap, 20px, 0px);
-    @include option(row-gap, 17px, 9px);
-    @include option(margin-bottom, 54px, 45px);
-    @include option(margin-top, 45px, 60px);
+    @include option(row-gap, 17px, 9px, 20px);
+    @include option(margin-bottom, 56px, 47px);
+    @include option(margin-top, 12px, 60px);
   }
 
-  &__btn{
+  &__btn {
     position: relative;
     display: block;
     margin: 0 auto;

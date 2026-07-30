@@ -1,4 +1,14 @@
 export const intro = {
+  linkOxota: {
+    href: "https://www.stoloto.ru/oxota",
+    target: "_blank",
+  },
+
+  linkLoto: {
+    href: "https://www.stoloto.ru",
+    target: "_blank",
+  },
+
   logoOxota: {
     imgAttr: {
       src: "/images/intro/ohotaLogo.svg",
@@ -28,7 +38,7 @@ export const intro = {
         {
           srcSet: "/images/intro/bgMobile.png",
           type: "image/png",
-          media: "(max-width: 1024px)",
+          media: "(max-width: 1023px)",
         },
       ],
     },
@@ -44,7 +54,7 @@ export const intro = {
         {
           srcSet: "/images/intro/menMobile.png",
           type: "image/png",
-          media: "(max-width: 1024px)",
+          media: "(max-width: 1023px)",
         },
       ],
     },
@@ -160,7 +170,7 @@ export const about = {
           title: "Больше чисел&nbsp;&mdash; больше шансов!",
           description: "С&nbsp;развернутой ставкой средний выигрыш в&nbsp;3&nbsp;раза больше*",
         },
-        note: "<p>* (по&nbsp;данным 07.12.2023&nbsp;&mdash; 09.06.2024)</p>",
+        note: "(по&nbsp;данным 07.12.2023&nbsp;&mdash; 09.06.2024)",
 
         bgCrown: {
           imgAttr: {
@@ -172,7 +182,7 @@ export const about = {
               {
                 srcSet: "/images/about/crownMobile.png",
                 type: "image/png",
-                media: "(max-width: 1024px)",
+                media: "(max-width: 1023px)",
               },
             ],
           },
@@ -188,7 +198,7 @@ export const about = {
               {
                 srcSet: "/images/about/cupMobile.png",
                 type: "image/png",
-                media: "(max-width: 1024px)",
+                media: "(max-width: 1023px)",
               },
             ],
           },
@@ -248,53 +258,10 @@ export const about = {
               {
                 srcSet: "/images/about/tableMobile.png",
                 type: "image/png",
-                media: "(max-width: 1024px)",
+                media: "(max-width: 1023px)",
               },
             ],
           },
-        },
-        table: {
-          rows: [
-            {
-              text: "<p>Выйгрыш в&nbsp;руб.</p>",
-            },
-            {
-              text: "<p>Суперприз</p>",
-            },
-            {
-              text: "<p>150&nbsp;000</p>",
-            },
-            {
-              text: "<p>15&nbsp;000</p>",
-            },
-            {
-              text: "<p>4&nbsp;500</p>",
-            },
-            {
-              text: "<p>6&nbsp;000</p>",
-            },
-            {
-              text: "<p>3&nbsp;600</p>",
-            },
-            {
-              text: "<p>1&nbsp;500</p>",
-            },
-            {
-              text: "<p>900</p>",
-            },
-            {
-              text: "<p>750</p>",
-            },
-            {
-              text: "<p>450</p>",
-            },
-            {
-              text: "<p>150</p>",
-            },
-            {
-              text: "<p>150</p>",
-            },
-          ],
         },
       },
     },
@@ -328,11 +295,23 @@ export const winner = {
             {
               srcSet: "/images/winner/cardMobile1.png",
               type: "image/png",
-              media: "(max-width: 1024px)",
+              media: "(max-width: 1023px)",
             },
           ],
         },
       },
+      coins: [
+        {
+          imgAttr: {
+            src: "/images/winner/card1Coin1.png",
+          },
+        },
+        {
+          imgAttr: {
+            src: "/images/winner/card1Coin2.png",
+          },
+        },
+      ],
     },
     {
       title: "Количество выигрышных билетов:",
@@ -348,7 +327,7 @@ export const winner = {
             {
               srcSet: "/images/winner/cardMobile2.png",
               type: "image/png",
-              media: "(max-width: 1024px)",
+              media: "(max-width: 1023px)",
             },
           ],
         },
@@ -368,7 +347,7 @@ export const winner = {
             {
               srcSet: "/images/winner/cardMobile3.png",
               type: "image/png",
-              media: "(max-width: 1024px)",
+              media: "(max-width: 1023px)",
             },
           ],
         },
@@ -388,7 +367,7 @@ export const winner = {
             {
               srcSet: "/images/winner/cardMobile4.png",
               type: "image/png",
-              media: "(max-width: 1024px)",
+              media: "(max-width: 1023px)",
             },
           ],
         },
@@ -486,16 +465,41 @@ export const modal = {
     "<p>Пермский край, Пермь г, Ласьвинская ул, 37, 1</p>",
     "<p>Пермский край, Пермь г, Ленина ул, 76</p>",
     "<p>Пермский край, Пермь г, Ленина ул, 76</p>",
+    "<p>Пермский край, Пермь г, Адмирала Ушакова ул, 55</p>",
+    "<p>Пермский край, Пермь г, Архитектора Свиязева ул, 30</p>",
+    "<p>Пермский край, Пермь г, Белинского ул, 47</p>",
+    "<p>Пермский край, Пермь г, Адмирала Ушакова ул, 55</p>",
+    "<p>Пермский край, Пермь г, Архитектора Свиязева ул, 30</p>",
+    "<p>Пермский край, Пермь г, Белинского ул, 47</p>",
+    "<p>Пермский край, Пермь г, Вильямса ул, 49а</p>",
+    "<p>Пермский край, Пермь г, Героев Хасана ул, 105, а</p>",
+    "<p>Пермский край, Пермь г, Ивана Франко ул, 38</p>",
+    "<p>Пермский край, Пермь г, Крупской ул, 42</p>",
+    "<p>Пермский край, Пермь г, Куйбышева ул, 36</p>",
+    "<p>Пермский край, Пермь г, Ласьвинская ул, 37, 1</p>",
+    "<p>Пермский край, Пермь г, Ленина ул, 76</p>",
+    "<p>Пермский край, Пермь г, Ленина ул, 76</p>",
   ],
   input: {
     type: "text",
     placeholder: "Введи адрес",
-  }
-}
+  },
+
+  crossIcon: {
+    imgAttr: {
+      src: "/images/cross.svg",
+      alt: "crossIcon",
+    },
+  },
+};
 
 export const promo = {
   title: "ПРОВЕРЬ СВОЙ ИНСТИНКТ",
   video: {
+    attr: {
+      controls: true,
+      autoplay: true,
+    },
     sources: [
       {
         src: "/video/video.mp4",
@@ -539,16 +543,54 @@ export const footer = {
 
   logo100Loto: {
     imgAttr: {
-      src: "/images/100LotoLogo.svg",
+      src: "/images/100lotoLogo.svg",
       alt: "logo100Loto",
+    },
+    sourceData: {
+      sources: [
+        {
+          srcSet: "/images/footer/lotoLogo.svg",
+          type: "image/png",
+          media: "(max-width: 1023px)",
+        },
+      ],
     },
   },
 
-  download: {
-    imgAttr: {
-      src: "/images/footer/download.png",
-      alt: "download",
-    },
+  linkLoto: {
+    href: "http://stoloto.ru/",
+    target: "_blank",
+  },
+
+  downloadButton: {
+    text: "Скачать",
+    icons: [
+      {
+        imgAttr: {
+          src: "/images/footer/android.svg",
+          alt: "android",
+        },
+      },
+      {
+        imgAttr: {
+          src: "/images/footer/apple.svg",
+          alt: "apple",
+        },
+      },
+    ],
+    // imgAttr: {
+    //   src: "/images/footer/download.png",
+    //   alt: "download",
+    // },
+    // sourceData: {
+    //   sources: [
+    //     {
+    //       srcSet: "/images/footer/downloadMobile.png",
+    //       type: "image/png",
+    //       media: "(max-width: 1024px)"
+    //     }
+    //   ]
+    // }
   },
 
   socialMedia: [
@@ -557,30 +599,34 @@ export const footer = {
         src: "/images/footer/vk.svg",
         alt: "vk",
       },
+      link: "https://vk.ru/stoloto?int=podval",
     },
     {
       imgAttr: {
         src: "/images/footer/ok.svg",
         alt: "ok",
       },
+      link: "https://ok.ru/stoloto",
     },
     {
       imgAttr: {
         src: "/images/footer/rutube.svg",
         alt: "rutube",
       },
+      link: "https://rutube.ru/u/stoloto/?int=podval",
     },
     {
       imgAttr: {
         src: "/images/footer/tg.svg",
         alt: "tg",
       },
+      link: "https://telegram.me/stoloto_bot",
     },
   ],
   copyright:
     "Фраза &laquo;Распределим 200&nbsp;000&nbsp;000&nbsp;₽&raquo; означает, что в&nbsp;тираже &laquo;ВГЛ 2&nbsp;Спорт&raquo;, алгоритм определения выигрышей &#8470;&nbsp;3, 14.11.2024&nbsp;в 21:55 мск между победителями будет распределена указанная сумма, если в&nbsp;тиражах с&nbsp;01.11.2024 по&nbsp;21:55 мск 14.11.2024 победителей в&nbsp;1-й категории. Заявленный размер суперприза (&laquo;Главный трофей от&nbsp;20&nbsp;000&nbsp;000&nbsp;₽&raquo;) является минимально гарантированной суммой, распределяемой среди победителей в&nbsp;соответствующей категории выигрышей. &laquo;Выигрывает каждый 3-й билет!&raquo; указывает на&nbsp;вероятность выигрыша в&nbsp;лотерее &laquo;ВГЛ 2&nbsp;Спорт&raquo;, алгоритм определения выигрышей &#8470;&nbsp;3, рассчитанную математическим путём и&nbsp;равную 1&nbsp;к 3,36. Фраза &laquo;Добыча будет больше&raquo; означает, что в&nbsp;случае распределения части накопленного суперприза призовой фонд каждой из&nbsp;категорий выигрышей, за&nbsp;исключением первой, будет увеличен за&nbsp;счет средств распределяемой суммы. Количество выигрышных билетов приведено по&nbsp;состоянию на&nbsp;25.09.2024. Фраза &laquo;каждые 15&nbsp;минут&raquo; означает проведение розыгрыша призового фонда тиража лотереи &laquo;ВГЛ 2&nbsp;Спорт&raquo;, алгоритм определения выигрышей &#8470;&nbsp;3, каждые 15&nbsp;минут, кроме технических перерывов. Время проведения технических перерывов&nbsp;&mdash; на&nbsp;stoloto.ru. Фраза &laquo;повышенный призовой фонд&raquo; указывает на&nbsp;то, что размер призового фонда лотереи &laquo;ВГЛ 2&nbsp;Спорт&raquo; выше минимально допустимого в&nbsp;соответствии с&nbsp;требованиями законодательства России размера призового фонда лотереи и&nbsp;составляет&nbsp;60% выручки от&nbsp;проведения лотереи. Фраза &laquo;Выигрывает каждый 3-й билет!&raquo; указывает на&nbsp;вероятность выигрыша в&nbsp;лотерее &laquo;ВГЛ 2&nbsp;Спорт&raquo;, алгоритм определения выигрышей &#8470;&nbsp;3, рассчитанную математическим путём и&nbsp;равную 1&nbsp;к 3,36. Фраза &laquo;средний выигрыш в&nbsp;3&nbsp;раза больше&raquo; указывает на&nbsp;статистически собранные данные выигрышей согласно аналитике по&nbsp;данным 07.12.2023&nbsp;&mdash; 09.06.2024. Срок проведения лотереи&nbsp;&mdash; до&nbsp;31.12.2029. Информацию об&nbsp;организаторе лотереи, о&nbsp;правилах ее&nbsp;проведения, призовом фонде лотереи, количестве призов или выигрышей, о&nbsp;сроках, месте и&nbsp;порядке получения призов или выигрышей можно узнать на&nbsp;сайте stoloto.ru.",
 
-  note: "&copy;&nbsp;2022&nbsp;АО &laquo;Технологическая Компания &laquo;Центр&raquo;"
+  note: "&copy;&nbsp;2022&nbsp;АО &laquo;Технологическая Компания &laquo;Центр&raquo;",
 };
 
 export const lightning = {

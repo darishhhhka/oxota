@@ -14,27 +14,28 @@
     }
   }
 
-  background-color: black;
   width: 100vw;
   position: relative;
+  background-color: $BLACK;
+  box-sizing: border-box;
 
   &__img {
     position: absolute;
     @include option(width, 860px, 345px, 750px);
     @include option(top, -160px, -70px, -150px);
-    @include option(right, 10px, -7px, 70px);
+    @include option(right, 50px, -3px, 70px);
   }
 
   &__content {
     color: white;
-    @include option(padding, 36px 194px, 0px 22px);
-    margin: 0 auto;
+    @include option(margin, 0px auto 30px, 260px auto 0px, 650px auto 30px);
+    @include option(padding, 36px 194px, 0px 18px);
+    @include option(width, 1577px, 328px, 700px);
+    position: relative;
   }
 
-  &__info{
-    @include option(margin-top, 0px, 260px, 650px);
-
-    @include NOT-DESK{
+  &__info {
+    @include NOT-DESK {
       text-align: center;
     }
   }
@@ -42,37 +43,38 @@
   &__when {
     @include option(font-size, 28px, 12px, 35px);
     font-weight: $FW-BOLD;
-    @include option(margin-bottom, 75px, 24px);
+    @include option(margin-bottom, 75px, 28px);
   }
 
-  &__prize{
+  &__prize {
     @include option(margin-bottom, 78px, 10px);
   }
 
-  &__prizeText{
+  &__prizeText {
     @include option(font-size, 39px, 16px, 40px);
-    @include option(margin-bottom, 0px, 6px);
+    @include option(margin-bottom, 0px, 0px);
   }
 
-  &__prizeMoney{
+  &__prizeMoney {
     @include option(margin, 6px 0px 10px, 0px);
     @include option(font-size, 79px, 28px, 80px);
     font-weight: $FW-BOLD;
     margin: 0;
   }
 
-  &__subText{
+  &__subText {
     @include option(font-size, 31px, 14px, 35px);
     font-weight: $FW-LIGHT;
     @include option(margin-bottom, 99px, 39px);
   }
 
-  &__btn{
+  &__btn {
     display: block;
     margin: 0 auto;
+    //@include option(margin-left, 0px, -8px);
   }
 
-  &__btnLightning{
+  &__btnLightning {
     @include option(width, 16px, 8px, 30px);
   }
 }

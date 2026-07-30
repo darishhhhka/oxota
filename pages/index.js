@@ -14,14 +14,15 @@ import Footer from "@/components/footer/Footer";
 export default function Home() {
   return (
     <>
-      <Intro/>
-      <When/>
-      <About/>
-      <Winner/>
-      <App/>
-      <Promo/>
-      <Footer/>
-      {/*<PageDescription {...defaultPage} />*/}
+      <PageDescription {...defaultPage} />
+      <Intro />
+      <When />
+      <About />
+      <Winner />
+      <App />
+      <Promo />
+      <Footer />
+
       {/*<CustomHeader {...header} />*/}
       {/*<Footer {...footerContent} />*/}
     </>

@@ -6,6 +6,7 @@ import Picture from "@/components/baseComponents/gui/picture/Picture";
 import {when} from "@/constants/copyright";
 import {safeHTML} from "@PS/frontend";
 import CustomButton from "@/components/customButton/CustomButton";
+import {MouseParallax} from "react-just-parallax";
 
 export default function When({className}) {
   return (
@@ -19,10 +20,20 @@ export default function When({className}) {
           </div>
           <p className={styles.when__subText}>{safeHTML(when.subtext.text)}</p>
         </div>
+
         <div className={styles.when__img}>
-          <Picture {...when.img} />
+          <MouseParallax strength={-0.02}>
+            <Picture {...when.img} />
+          </MouseParallax>
         </div>
-        <CustomButton className={styles.when__btn} href={when.button.href} bgColor="white" textColor="red" isIcon colorIcon="red">
+        <CustomButton
+          className={styles.when__btn}
+          href={when.button.href}
+          bgColor="white"
+          textColor="red"
+          isIcon
+          colorIcon="red"
+        >
           {safeHTML(when.button.text)}
         </CustomButton>
       </div>

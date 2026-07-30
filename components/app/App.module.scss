@@ -16,63 +16,68 @@
   width: 100vw;
   position: relative;
 
-  &__bg{
+  &__bg {
     @include sectionBg;
+    @include option(top, -5px);
     background-color: $BLACK;
     z-index: -1;
   }
 
-  &__shadowBg{
+  &__shadowBg {
     position: absolute;
-    bottom: 0;
+    @include option(bottom, -1px);
     width: 100%;
     @include option(height, 601px, 170px);
     background: linear-gradient(transparent, $RED);
   }
 
-  &__content{
-    @include option(padding,0px 200px, 0px);
-    @include option(margin, 69px auto, 10px 15px);
+  &__content {
+    @include option(padding, 0px 200px, 0px);
+    @include option(margin, 69px auto, 15px 15px);
+    @include option(width, 1520px, 328px, 700px);
     color: $WHITE;
   }
 
-  &__title{
+  &__title {
     @include option(max-width, 920px, 196px, 900px);
-    @include NOT-DESK{
+    @include option(margin-bottom, 15px, 0px);
+    @include NOT-DESK {
       text-align: center;
       margin: 0 auto;
     }
   }
 
-  &__subTitle{
+  &__subTitle {
     @include option(font-size, 24px, 12px, 30px);
     font-weight: $FW-LIGHT;
-    @include option(margin-top, 15px);
-    @include NOT-DESK{
+    @include option(margin-top, 0px, 10px);
+    @include NOT-DESK {
       text-align: center;
     }
   }
 
-  &__list{
+  &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     @include option(gap, 20px, 10px);
     @include option(margin-top, 65px, 29px);
-    @include option(margin-bottom, 31px, 29px);
+    @include option(margin-bottom, 31px, 33px);
   }
 
-  &__link{
-    @include option(font-size, 32px, 14px);
+  &__link {
+    @include option(font-size, 32px, 14px, 25px);
     display: flex;
     align-items: center;
     justify-content: center;
-    @include option(gap, 10px);
+    @include option(gap, 12px);
     text-decoration: underline;
+    letter-spacing: 0.02em;
+    cursor: pointer;
   }
 
-  &__iconLink{
+  &__iconLink {
     @include option(width, 66px, 55px);
-    @include option(margin-left, -30px, 20px)
+    @include option(margin-left, -10px, 24px);
   }
 }

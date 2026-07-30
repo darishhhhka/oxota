@@ -20,44 +20,118 @@
   background-color: $RED;
   box-sizing: border-box;
   color: $WHITE;
-  @include option(padding, 81px 200px, 32px 16px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
-  &__subTitle{
-    @include option(font-size, 24px, 12px);
+  &__close {
+    position: absolute;
+    @include option(top, 50px, 20px);
+    @include option(right, 50px, 20px);
+    cursor: pointer;
+  }
+
+  &__wrap {
+    @include option(width, 1520px, 328px, 700px);
+    @include option(padding, 82px 200px, 32px 16px);
+  }
+
+  &__title {
+    @include option(margin, 0px 0px 10px, 0px 0px, 0px);
+  }
+
+  &__subTitle {
+    @include option(font-size, 24px, 12px, 25px);
     font-weight: $FW-LIGHT;
   }
 
-  &__content{
+  &__content {
     display: flex;
     align-items: start;
     @include option(gap, 29px, 20px);
+    @include option(height, 699px, 588px, 800px);
+    justify-content: center;
+    @include option(margin, 80px 0px 10px, 0px 0px, 0px);
+
+    @include NOT-DESK {
+      flex-direction: column-reverse;
+      justify-content: start;
+    }
   }
 
-  &__mapWrap{
-    @include option(width, 939px, 328px);
+  &__mapWrap {
+    @include option(width, 939px, 328px, 700px);
+    height: 100%;
     @include option(height, 699px, 515px);
-
   }
 
-  &__map{
+  &__map {
     width: 100%;
     height: 100%;
     @include option(border-radius, 14px, 0px);
   }
 
-  &__input{
-    @include option(width, 551px, 328px);
-    @include option(height, 76px, 53px);
+  &__input {
+    width: 100%;
+    //@include option(width, 551px, 328px, 700px);
+    @include option(height, 76px, 53px, 76px);
     @include option(border-radius, 14px, 8px);
     @include option(padding, 0px 24px, 0px 18px);
-    color: #1B4DA0;
-
-    &::placeholder{
-      color: #1B4DA0;
-      font-family: "Roboto Flex";
-      @include option(font-size, 18px, 12px);
+    box-sizing: border-box;
+    color: $BLACK;
+    &::placeholder {
+      color: #1b4da0;
+      font-family: "RobotoFlex";
+      @include option(font-size, 18px, 12px, 25px);
     }
     border: none;
   }
 
+  &__search {
+    @include option(width, 551px, 328px, 700px);
+    //@include option(height, 699px, 515px, 700px);
+  }
+
+  &__adresses {
+    //height: 100%;
+    width: 100%;
+    @include option(gap, 29px, 20px);
+    background-color: $RED;
+    @include option(height, 611px, 535px, 600px);
+    @include option(padding, 13px 16px);
+    @include option(margin-top, 12px);
+    //overflow-y: scroll;
+    @include DESKTOP {
+      border: 3px solid #ffffff59;
+    }
+    @include option(border-radius, 12px, 0px);
+    //scrollbar-width: thin;
+    //scrollbar-color: $WHITE #ffffff33;
+    box-sizing: border-box;
+
+    @include NOT-DESK {
+      display: none;
+    }
+
+    &_active {
+      @include NOT-DESK {
+        display: block;
+        position: absolute;
+      }
+    }
+
+    p {
+      font-family: "RobotoFlex";
+      @include option(font-size, 18px, 12px, 24px);
+      @include option(line-height, 24px, 24px, 39px);
+      @include option(padding, 8px, 6px 8px);
+      cursor: pointer;
+      margin: 0;
+
+      &:hover {
+        background-color: $BLACK;
+      }
+    }
+  }
 }

@@ -16,150 +16,156 @@
   width: 100vw;
   position: relative;
 
-  &__bg{
-    background: radial-gradient(circle at 50% 20%, #D03B2F 10%, #000000 80%);
-    background-color: #D03B2F;
+  &__bg {
+    background: radial-gradient(circle at 50% 30%, #d03b2f 10%, #000000 80%);
+    background-color: #d03b2f;
     @include sectionBg;
     z-index: -1;
   }
 
-  &__bgItem{
+  &__bgItem {
     position: absolute;
   }
 
-  &__bgBottomShadow{
+  &__bgBottomShadow {
     width: 100%;
     @include option(height, 681px);
     @include option(top, 484px, 387px, 1500px);
     background: linear-gradient(to top, #000000, transparent);
+    z-index: 3;
   }
 
-  &__bgImage{
+  &__bgImage {
     @include option(width, 1520px, 263px, 900px);
     @include option(height, 598px, 226px, 775px);
     position: absolute;
-    @include option(top, 301px, 164px, 490px);
+    @include option(top, 301px, 160px, 490px);
     left: 50%;
     transform: translateX(-50%);
-
   }
 
-  &__bgImageBase, &__bgImageAfter{
+  &__bgImageBase,
+  &__bgImageAfter {
     position: absolute;
     height: 100%;
     width: 100%;
   }
 
-  &__bgImageAfter{
+  &__bgImageAfter {
     @include option(left, -8px);
     animation: glitch1 8s infinite;
   }
 
-  &__bgMen{
+  &__bgMen {
     @include option(width, 510px, 266px, 800px);
-    @include option(top, 94px, 138px, 400px);
+    @include option(top, 94px, 135px, 400px);
     left: 50%;
     transform: translateX(-54%);
+    z-index: 2;
   }
 
-  &__content{
-    @include option(padding, 78px 0px, 31px 0px, 110px 0px);
+  &__content {
+    @include option(padding, 78px 0px, 28px 0px, 110px 0px);
     @include option(width, 1520px, 265px, 900px);
     margin: 0 auto;
     color: white;
     z-index: 10;
+    position: relative;
   }
 
-  &__logoOxota{
+  &__logoOxota {
     @include option(width, 195px, 110px, 400px);
   }
 
-  &__logoLoto{
+  &__logoLoto {
     @include option(width, 215px, 119px, 400px);
   }
 
-  &__header{
+  &__header {
     display: flex;
     align-items: center;
     @include option(gap, 80px, 35px, 60px);
   }
 
-  &__info{
-    @include option(margin-top, 579px, 280px, 1000px);
+  &__info {
+    @include option(padding-top, 579px, 275px, 1000px);
     text-align: center;
     text-transform: uppercase;
   }
 
-  &__title{
+  &__title {
     @include option(font-size, 45px, 16px, 50px);
     margin: 0;
+    @include option(margin-left, 0px, 20px);
   }
 
-  &__infoNumber{
+  &__infoNumber {
     @include option(font-size, 90px, 32px, 90px);
     font-weight: $FW-BOLD;
     margin: 0;
+    @include option(margin-left, 0px, 20px);
   }
 
-  &__infoSub{
+  &__infoSub {
     @include option(font-size, 36px, 14px, 50px);
     font-weight: $FW-LIGHT;
-    @include option(margin-bottom, 48px, 30px);
-    @include option(margin-top, 30px, 30px);
+    @include option(margin-bottom, 48px, 23px);
+    @include option(margin-top, 30px, 18px);
+    @include option(margin-left, 0px, 20px);
   }
 
-  &__win{
+  &__win {
     text-align: left;
     @include option(font-size, 28px, 12px, 30px);
     font-weight: $FW-BOLD;
-    @include option(right, 201px);
+    right: 0;
+    //@include option(right, 201px);
     @include option(top, 82px);
     @include option(margin-top, 0px, 47px, 100px);
     position: static;
-    @include DESKTOP{
+    @include DESKTOP {
       position: absolute;
       text-align: right;
     }
 
-    &_l{
+    &_l {
       display: block;
       font-weight: $FW-LIGHT;
       @include option(margin-bottom, 8px, 0px);
     }
   }
 
-  &__btnLightning{
+  &__btnLightning {
     @include option(width, 16px, 8px, 30px);
   }
 }
 
 @keyframes glitch1 {
-  from{
+  from {
     clip: rect(570px, 1520px, 598px, 0);
   }
-  10%{
+  10% {
     clip: rect(300px, 1520px, 310px, 0);
   }
-  20%{
+  20% {
     clip: rect(590px, 1520px, 598px, 0);
   }
-  60%{
+  60% {
     clip: rect(0px, 1520px, 18px, 0);
   }
-  60.01%{
+  60.01% {
     clip: rect(300px, 1520px, 400px, 0);
   }
-  80%{
+  80% {
     clip: rect(300px, 1520px, 400px, 0);
   }
-  80.01%{
+  80.01% {
     clip: rect(400px, 1520px, 560px, 0);
   }
-  99%{
+  99% {
     clip: rect(400px, 1520px, 560px, 0);
   }
-  to{
+  to {
     clip: rect(0px, 1520px, 0px, 0);
   }
 }
-

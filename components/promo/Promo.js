@@ -9,19 +9,24 @@ import CustomButton from "@/components/customButton/CustomButton";
 export default function Promo() {
   return (
     <div className={classNames(styles.promo)}>
-      <div className={styles.promo__bg}><div className={styles.promo__shadowBg}></div></div>
+      <div className={styles.promo__bg}>
+        <div className={styles.promo__shadowBg}></div>
+      </div>
       <div className={styles.promo__content}>
         <Title className={styles.promo__title}>{promo.title}</Title>
         <div className={styles.promo__videoWrap}>
-          <video className={styles.promo__video}>
-            {promo.video.sources.map((item, i) => (<source {...item}/>))}
+          <video className={styles.promo__video} {...promo.video.attr}>
+            {promo.video.sources.map((item, i) => (
+              <source {...item} />
+            ))}
           </video>
         </div>
-        <CustomButton className={styles.promo__btn} href={promo.button.href} isIcon={false}>{promo.button.text}</CustomButton>
+        <CustomButton className={styles.promo__btn} href={promo.button.href} isIcon={false}>
+          {promo.button.text}
+        </CustomButton>
       </div>
     </div>
   );
 }
 
-Promo.propTypes = {
-};
+Promo.propTypes = {};

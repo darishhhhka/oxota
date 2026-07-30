@@ -12,18 +12,23 @@ export default function Footer() {
       <div className={styles.footer__bg}></div>
       <div className={styles.footer__content}>
         <p className={styles.footer__news}>{safeHTML(footer.news)}</p>
-        <div className={styles.footer__lotoLogo}>
+        <a {...footer.linkLoto} className={styles.footer__lotoLogo}>
           <Picture {...footer.logo100Loto} />
-        </div>
+        </a>
         <div className={styles.footer__socialMedia}>
           {footer.socialMedia.map((icon, index) => (
-            <div className={styles.footer__socialMediaImg} key={`footer-socal-media-${index}`}>
+            <a
+              href={icon.link}
+              target="_blank"
+              className={styles.footer__socialMediaImg}
+              key={`footer-socal-media-${index}`}
+            >
               <Picture {...icon} />
-            </div>
+            </a>
           ))}
         </div>
         <div className={styles.footer__downloadWrap}>
-          <div>
+          <div className={styles.footer__downloadInfo}>
             <p className={classNames(styles.footer__downloadText, styles.footer__downloadText_desk)}>
               {safeHTML(footer.downloadText.desk)}
             </p>
@@ -32,7 +37,16 @@ export default function Footer() {
               <span className={styles.footer__downloadSubText}>{safeHTML(footer.downloadText.mob.subTitle)}</span>
             </p>
             <div className={styles.footer__download}>
-              <Picture {...footer.download} />
+              <div className={styles.footer__downloadIcons}>
+                {footer.downloadButton.icons.map((icon, index) => (
+                  <div className={styles.footer__downloadIcon}>
+                    <Picture key={`footer-phone-icon-${index}`} {...icon} />
+                  </div>
+                ))}
+              </div>
+
+              {footer.downloadButton.text}
+              {/*<Picture {...footer.download} />*/}
             </div>
           </div>
           <div className={styles.footer__qr}>
