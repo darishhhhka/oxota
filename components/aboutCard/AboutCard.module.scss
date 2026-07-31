@@ -345,11 +345,12 @@
       @include option(width, 100px, 164px, 500px);
       //width: max-content;
       margin: 0;
-
+      display: flex;
       @include NOT-DESK {
         &::before {
           content: "";
-          display: inline-block;
+          display: block;
+          flex-shrink: 0;
           @include option(width, 0px, 16px, 30px);
           @include option(height, 0px, 12px, 22px);
           background: url("/images/about/check.svg") no-repeat center/cover;

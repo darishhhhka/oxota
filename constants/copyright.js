@@ -293,7 +293,7 @@ export const winner = {
         sourceData: {
           sources: [
             {
-              srcSet: "/images/winner/cardMobile1.png",
+              srcSet: "/images/winner/card1Mobile.png",
               type: "image/png",
               media: "(max-width: 1023px)",
             },
@@ -305,10 +305,28 @@ export const winner = {
           imgAttr: {
             src: "/images/winner/card1Coin1.png",
           },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card1Coin1Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
+          },
         },
         {
           imgAttr: {
             src: "/images/winner/card1Coin2.png",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card1Coin2Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
           },
         },
       ],
@@ -325,13 +343,57 @@ export const winner = {
         sourceData: {
           sources: [
             {
-              srcSet: "/images/winner/cardMobile2.png",
+              srcSet: "/images/winner/card2Mobile.png",
               type: "image/png",
               media: "(max-width: 1023px)",
             },
           ],
         },
       },
+      coins: [
+        {
+          imgAttr: {
+            src: "/images/winner/card2Coin1.png",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card2Coin1Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
+          },
+        },
+        {
+          imgAttr: {
+            src: "/images/winner/card2Coin2.png",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card2Coin2Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
+          },
+        },
+        {
+          imgAttr: {
+            src: "/images/winner/card2Coin3.png",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card2Coin3Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
+          },
+        },
+      ],
     },
     {
       title: "Ежедневная добыча охотников",
@@ -345,13 +407,43 @@ export const winner = {
         sourceData: {
           sources: [
             {
-              srcSet: "/images/winner/cardMobile3.png",
+              srcSet: "/images/winner/card3Mobile.png",
               type: "image/png",
               media: "(max-width: 1023px)",
             },
           ],
         },
       },
+      coins: [
+        {
+          imgAttr: {
+            src: "/images/winner/card3Coin1.png",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card3Coin1Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
+          },
+        },
+        {
+          imgAttr: {
+            src: "/images/winner/card3Coin2.png",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card3Coin2Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
+          },
+        },
+      ],
     },
     {
       title: "Были в&nbsp;шаге от&nbsp;главного трофея:",
@@ -365,13 +457,43 @@ export const winner = {
         sourceData: {
           sources: [
             {
-              srcSet: "/images/winner/cardMobile4.png",
+              srcSet: "/images/winner/card4Mobile.png",
               type: "image/png",
               media: "(max-width: 1023px)",
             },
           ],
         },
       },
+      coins: [
+        {
+          imgAttr: {
+            src: "/images/winner/card4Coin1.png",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card4Coin1Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
+          },
+        },
+        {
+          imgAttr: {
+            src: "/images/winner/card4Coin2.png",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/images/winner/card4Coin2Mobile.png",
+                type: "image/png",
+                media: "(max-width: 1023px)",
+              },
+            ],
+          },
+        },
+      ],
     },
   ],
   arrow: {
@@ -484,7 +606,6 @@ export const modal = {
     type: "text",
     placeholder: "Введи адрес",
   },
-
   crossIcon: {
     imgAttr: {
       src: "/images/cross.svg",
@@ -498,7 +619,8 @@ export const promo = {
   video: {
     attr: {
       controls: true,
-      autoplay: true,
+      muted: true,
+      playsInline: true,
     },
     sources: [
       {
@@ -595,6 +717,7 @@ export const footer = {
 
   socialMedia: [
     {
+      name: "vk",
       imgAttr: {
         src: "/images/footer/vk.svg",
         alt: "vk",
@@ -602,6 +725,7 @@ export const footer = {
       link: "https://vk.ru/stoloto?int=podval",
     },
     {
+      name: "ok",
       imgAttr: {
         src: "/images/footer/ok.svg",
         alt: "ok",
@@ -609,6 +733,7 @@ export const footer = {
       link: "https://ok.ru/stoloto",
     },
     {
+      name: "rutube",
       imgAttr: {
         src: "/images/footer/rutube.svg",
         alt: "rutube",
@@ -616,6 +741,7 @@ export const footer = {
       link: "https://rutube.ru/u/stoloto/?int=podval",
     },
     {
+      name: "tg",
       imgAttr: {
         src: "/images/footer/tg.svg",
         alt: "tg",
@@ -630,16 +756,17 @@ export const footer = {
 };
 
 export const lightning = {
-  red: {
-    imgAttr: {
-      src: "/images/lightningRed.svg",
-      alt: "lightningRed",
-    },
-  },
-  white: {
-    imgAttr: {
-      src: "/images/lightning.svg",
-      alt: "lightning",
-    },
-  },
+  name: "lightning",
+  // red: {
+  //   imgAttr: {
+  //     src: "/images/lightningRed.svg",
+  //     alt: "lightningRed",
+  //   },
+  // },
+  // white: {
+  //   imgAttr: {
+  //     src: "/images/lightning.svg",
+  //     alt: "lightning",
+  //   },
+  // },
 };

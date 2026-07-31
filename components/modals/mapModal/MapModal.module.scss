@@ -30,11 +30,13 @@
     @include option(top, 50px, 20px);
     @include option(right, 50px, 20px);
     cursor: pointer;
+    @include option(width, 50px, 30px);
   }
 
   &__wrap {
-    @include option(width, 1520px, 328px, 700px);
+    @include option(width, 1520px, 328px, 600px);
     @include option(padding, 82px 200px, 32px 16px);
+    overflow-y: scroll;
   }
 
   &__title {
@@ -49,8 +51,8 @@
   &__content {
     display: flex;
     align-items: start;
-    @include option(gap, 29px, 20px);
-    @include option(height, 699px, 588px, 800px);
+    @include option(grid-gap, 29px, 20px);
+    //@include option(height, 699px, 588px, 800px);
     justify-content: center;
     @include option(margin, 80px 0px 10px, 0px 0px, 0px);
 
@@ -61,9 +63,9 @@
   }
 
   &__mapWrap {
-    @include option(width, 939px, 328px, 700px);
-    height: 100%;
-    @include option(height, 699px, 515px);
+    @include option(width, 939px, 328px, 600px);
+    //height: 100%;
+    @include option(height, 699px, 452px);
   }
 
   &__map {
@@ -75,7 +77,7 @@
   &__input {
     width: 100%;
     //@include option(width, 551px, 328px, 700px);
-    @include option(height, 76px, 53px, 76px);
+    @include option(height, 76px, 46px, 76px);
     @include option(border-radius, 14px, 8px);
     @include option(padding, 0px 24px, 0px 18px);
     box-sizing: border-box;
@@ -89,7 +91,7 @@
   }
 
   &__search {
-    @include option(width, 551px, 328px, 700px);
+    @include option(width, 551px, 328px, 600px);
     //@include option(height, 699px, 515px, 700px);
   }
 

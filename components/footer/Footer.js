@@ -5,6 +5,8 @@ import styles from "./Footer.module.scss";
 import {footer} from "@/constants/copyright";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 import {safeHTML} from "@PS/frontend";
+import Icon from "@/components/baseComponents/gui/icon/Icon";
+import CustomButton from "@/components/customButton/CustomButton";
 
 export default function Footer() {
   return (
@@ -20,10 +22,10 @@ export default function Footer() {
             <a
               href={icon.link}
               target="_blank"
-              className={styles.footer__socialMediaImg}
+              className={classNames(styles.footer__socialMediaImg, styles[`footer__socialMediaImg_${index}`])}
               key={`footer-socal-media-${index}`}
             >
-              <Picture {...icon} />
+              <Icon name={icon.name} />
             </a>
           ))}
         </div>
@@ -36,18 +38,18 @@ export default function Footer() {
               {safeHTML(footer.downloadText.mob.title)}
               <span className={styles.footer__downloadSubText}>{safeHTML(footer.downloadText.mob.subTitle)}</span>
             </p>
-            <div className={styles.footer__download}>
+            <CustomButton className={styles.footer__download}>
               <div className={styles.footer__downloadIcons}>
                 {footer.downloadButton.icons.map((icon, index) => (
-                  <div className={styles.footer__downloadIcon}>
-                    <Picture key={`footer-phone-icon-${index}`} {...icon} />
+                  <div className={styles.footer__downloadIcon} key={`footer-phone-icon-${index}`}>
+                    <Picture {...icon} />
                   </div>
                 ))}
               </div>
 
               {footer.downloadButton.text}
               {/*<Picture {...footer.download} />*/}
-            </div>
+            </CustomButton>
           </div>
           <div className={styles.footer__qr}>
             <Picture {...footer.qr} />

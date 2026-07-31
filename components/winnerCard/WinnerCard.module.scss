@@ -18,14 +18,73 @@
   @include option(height, 583px, 169px, 360px);
   position: relative;
   color: $WHITE;
+  overflow: hidden;
 
   &__bg {
     @include sectionBg;
     //z-index: -1;
   }
 
+  &__itemBg {
+    position: absolute;
+  }
+
+  &__bgCoin1-1 {
+    @include option(width, 300px, 65px);
+    @include option(top, 90px, 53px);
+    @include option(left, -100px, 165px);
+  }
+
+  &__bgCoin1-2 {
+    @include option(width, 102px, 189px);
+    @include option(top, 339px, -12px);
+    @include option(left, -10px, 205px);
+  }
+
+  &__bgCoin2-1 {
+    @include option(width, 197px, 108px);
+    @include option(top, 25px, 18px);
+    @include option(right, -5px, 62px);
+  }
+
+  &__bgCoin2-2 {
+    @include option(width, 108px, 48px);
+    @include option(top, 361px, 70px);
+    @include option(left, 107px, 116px);
+  }
+
+  &__bgCoin2-3 {
+    @include option(width, 130px, 78px);
+    @include option(top, 103px, -22px);
+    @include option(left, 23px, 17px);
+  }
+
+  &__bgCoin3-1 {
+    @include option(width, 98px, 88px);
+    @include option(top, 147px, 47px);
+    @include option(left, 146px, 130px);
+  }
+
+  &__bgCoin3-2 {
+    @include option(width, 158px, 165px);
+    @include option(top, -35px, -45px);
+    @include option(right, -35px, -60px);
+  }
+
+  &__bgCoin4-1 {
+    @include option(width, 96px, 178px);
+    @include option(top, 288px, -26px);
+    @include option(right, 20px, -62px);
+  }
+
+  &__bgCoin4-2 {
+    @include option(width, 196px, 98px);
+    @include option(top, 129px, 40px);
+    @include option(left, 43px, 173px);
+  }
+
   &__content {
-    @include option(padding, 35px 37px 20px, 10px 13px 18px);
+    @include option(padding, 35px 37px 20px, 10px 13px 18px 105px);
     box-sizing: border-box;
     height: 100%;
     display: flex;
@@ -49,6 +108,9 @@
     color: $RED;
     font-weight: $FW-EXTRA_BOLD;
     margin: 0;
+    @include mod("0") {
+      @include option(letter-spacing, -1px);
+    }
   }
 
   &__note {

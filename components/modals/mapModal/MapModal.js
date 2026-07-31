@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 import * as PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./MapModal.module.scss";
@@ -9,27 +9,30 @@ import {safeHTML} from "@PS/frontend";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 import {baseConsumers} from "@PS/core";
 import Scroll from "@/components/baseComponents/gui/scroll/Scroll";
+import LabelInput from "@/components/baseComponents/gui/form/LabelInput";
 
 export default function MapModal({className, children}) {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState(modal.addresses);
   const [isFocus, setFocus] = useState(false);
 
-  const textChange = e => {
+  const {crossIcon, input, addresses, subTitle, title} = modal;
+
+  const textChange = useCallback(e => {
     const value = e.target.value;
     setQuery(value);
-    setResult(res => modal.addresses.filter(address => address.toLowerCase().includes(value.toLowerCase())));
-  };
+    setResult(res => addresses.filter(address => address.toLowerCase().includes(value.toLowerCase())));
+  }, []);
 
   return (
     <CustomModal>
       <div className={classNames(styles.mapModal, className)}>
         <div onClick={() => baseConsumers.modalClose({type: "map"})} className={styles.mapModal__close}>
-          <Picture {...modal.crossIcon} />
+          <Picture {...crossIcon} />
         </div>
         <div className={styles.mapModal__wrap}>
-          <Title className={styles.mapModal__title}>{modal.title}</Title>
-          <p className={styles.mapModal__subTitle}>{safeHTML(modal.subTitle)}</p>
+          <Title className={styles.mapModal__title}>{title}</Title>
+          <p className={styles.mapModal__subTitle}>{safeHTML(subTitle)}</p>
           <div className={styles.mapModal__content}>
             <div className={styles.mapModal__mapWrap}>
               <iframe
@@ -37,24 +40,27 @@ export default function MapModal({className, children}) {
                 src="https://yandex.ru/map-widget/v1/?ll=37.755531%2C55.746821&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE2NjM5MxIa0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAiCg14eBZCFfUFX0I%2C&z=10.96"
               ></iframe>
             </div>
-            <div className={styles.mapModal__search}>
-              <input
+            <form className={styles.mapModal__search}>
+              <LabelInput
+                {...input}
                 className={styles.mapModal__input}
-                type={modal.input.type}
-                placeholder={modal.input.placeholder}
                 onChange={textChange}
                 value={query}
-                onFocus={() => setFocus(true)}
-                onBlur={() => setFocus(false)}
+                onFocus={() => {
+                  setFocus(true);
+                }}
+                onBlur={() => {
+                  setFocus(false);
+                }}
               />
               <div className={classNames(styles.mapModal__adresses, isFocus && styles.mapModal__adresses_active)}>
                 <Scroll>
                   {result.map((adress, index) => (
-                    <div onClick={() => setQuery(adress)}>{safeHTML(adress)}</div>
+                    <div onClick={() => setQuery(state => adress.slice(3, -5))}>{safeHTML(adress)}</div>
                   ))}
                 </Scroll>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

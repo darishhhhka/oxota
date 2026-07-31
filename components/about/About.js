@@ -24,7 +24,7 @@ export default function About({}) {
             />
           ))}
         </div>
-        <CustomButton className={styles.about__btn} href={about.button.href}>
+        <CustomButton className={styles.about__btn} href={about.button.href} colorIcon="red">
           {about.button.text}
         </CustomButton>
       </div>

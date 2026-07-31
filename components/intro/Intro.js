@@ -41,7 +41,7 @@ export default function Intro({className}) {
           <h1 className={styles.intro__title}>{intro.title.text}</h1>
           <p className={styles.intro__infoNumber}>{safeHTML(intro.title.number)}</p>
           <p className={styles.intro__infoSub}>{safeHTML(intro.subtitle.text)}</p>
-          <CustomButton href={intro.button.href} bgColor="red" textColor="white" isIcon colorIcon="white">
+          <CustomButton href={intro.button.href} bgColor="red" textColor="white" colorIcon="white">
             {intro.button.text}
           </CustomButton>
         </div>

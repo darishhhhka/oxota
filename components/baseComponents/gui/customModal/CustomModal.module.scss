@@ -46,7 +46,7 @@
   height: 100%;
   overflow: auto;
   outline: 0;
-  pointer-events: none;
+  //pointer-events: none;
 
   &__bg {
     position: fixed;
@@ -106,6 +106,7 @@
   }
 
   &__content {
+    pointer-events: all;
     position: relative;
     display: flex;
     flex-direction: column;

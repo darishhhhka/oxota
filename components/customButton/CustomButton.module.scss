@@ -1,8 +1,15 @@
 @use "@styles/base" as *;
+@use "@styles/_animations" as *;
 
 .customButton {
   @mixin mod($mod) {
     @include modifier("customButton", $mod) {
+      @content;
+    }
+  }
+
+  @mixin modIcon($mod) {
+    @include modifier("customButton__icon", $mod) {
       @content;
     }
   }
@@ -37,6 +44,12 @@
     }
   }
 
+  @include modIcon("red") {
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(100%);
+    }
+  }
+
   @include mod("text_red") {
     &:hover {
       color: $WHITE;
@@ -66,6 +79,7 @@
       color: $RED;
     }
   }
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: "";
@@ -74,7 +88,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    background: linear-gradient(130deg, transparent 10%, $WHITE, transparent 90%);
+    background: linear-gradient(130deg, rgba($WHITE, 0) 10%, $WHITE, rgba($WHITE, 0) 90%);
     animation: shineButton 5s linear infinite;
   }
 
@@ -109,18 +123,34 @@
   }
 
   &__icon {
-    @include option(width, 16px, 8px, 30px);
-  }
-}
+    svg[width] {
+      @include option(width, 16px, 8px, 30px);
+    }
+    svg[height] {
+      @include option(height, 36px, 19px, 30px);
+    }
+    path[fill] {
+      fill: var(--button-icon-color, #{$RED});
+    }
 
-@keyframes shineButton {
-  from {
-    transform: translateX(-200%);
+    .customButton:hover &,
+    :global(.button_hover) & {
+      path[fill] {
+        fill: var(--button-icon-hover-color, #{$WHITE});
+      }
+    }
+
+    &_white {
+      --button-icon-color: #{$WHITE};
+      --button-icon-hover-color: #{$RED};
+    }
+
+    &_red {
+      --button-icon-color: #{$RED};
+      --button-icon-hover-color: #{$WHITE};
+    }
   }
-  20% {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(100%);
+
+  &__shine {
   }
 }

@@ -57,7 +57,7 @@ export default function AboutCard({className, index, title, icon, content}) {
               <div className={styles.aboutCard__icon}>
                 <Picture {...content.icon} />
               </div>
-              <div classNamt={styles.aboutCard__wrapNoteText}>
+              <div className={styles.aboutCard__wrapNoteText}>
                 <p className={classNames(styles.aboutCard__text, styles.aboutCard__text_b)}>
                   {safeHTML(content.subtext.title)}
                 </p>

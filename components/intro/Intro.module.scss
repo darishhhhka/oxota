@@ -142,30 +142,30 @@
 
 @keyframes glitch1 {
   from {
-    clip: rect(570px, 1520px, 598px, 0);
+    clip-path: inset(570px calc(100% - 1520px) calc(100% - 598px) 0);
   }
   10% {
-    clip: rect(300px, 1520px, 310px, 0);
+    clip-path: inset(300px calc(100% - 1520px) calc(100% - 310px) 0);
   }
   20% {
-    clip: rect(590px, 1520px, 598px, 0);
+    clip-path: inset(590px calc(100% - 1520px) calc(100% - 598px) 0);
   }
   60% {
-    clip: rect(0px, 1520px, 18px, 0);
+    clip-path: inset(0px calc(100% - 1520px) calc(100% - 18px) 0);
   }
   60.01% {
-    clip: rect(300px, 1520px, 400px, 0);
+    clip-path: inset(300px calc(100% - 1520px) calc(100% - 400px) 0);
   }
   80% {
-    clip: rect(300px, 1520px, 400px, 0);
+    clip-path: inset(300px calc(100% - 1520px) calc(100% - 400px) 0);
   }
   80.01% {
-    clip: rect(400px, 1520px, 560px, 0);
+    clip-path: inset(400px calc(100% - 1520px) calc(100% - 560px) 0);
   }
   99% {
-    clip: rect(400px, 1520px, 560px, 0);
+    clip-path: inset(400px calc(100% - 1520px) calc(100% - 560px) 0);
   }
   to {
-    clip: rect(0px, 1520px, 0px, 0);
+    clip-path: inset(0px calc(100% - 1520px) calc(100% - 0px) 0);
   }
 }

@@ -8,13 +8,13 @@ import {safeHTML} from "@PS/frontend";
 import {useButtonControl} from "@/components/customButton/utils/hooks/useButtonControl";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 import {lightning} from "@/constants/copyright";
+// import { Lightning} from "@/icons/lightning.svg";
 
 const CustomButton = forwardRef(function (
   {
     bgColor = "white",
     textColor = "red",
-    isIcon = true,
-    colorIcon = "red",
+    colorIcon,
     className,
     children,
     text,
@@ -72,9 +72,9 @@ const CustomButton = forwardRef(function (
       {...rest}
     >
       <a className={styles.customButton__link} href="http://stoloto.ru/" target="_blank">
-        {isIcon && (
-          <div className={styles.customButton__icon}>
-            <Picture {...iconLightning} />
+        {colorIcon && (
+          <div className={classNames(styles.customButton__icon, styles[`customButton__icon_${colorIcon}`])}>
+            <Icon name={lightning.name} />
           </div>
         )}
         {children}

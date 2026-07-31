@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Head from "next/head";
 import {Provider} from "react-redux";
 import store from "@/redux/store";

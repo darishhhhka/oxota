@@ -33,7 +33,7 @@
 
   &__content {
     @include option(padding, 0px 200px, 0px);
-    @include option(margin, 69px auto, 15px 15px);
+    @include option(margin, 69px auto, 15px auto);
     @include option(width, 1520px, 328px, 700px);
     color: $WHITE;
   }

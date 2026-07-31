@@ -22,9 +22,7 @@ export default function When({className}) {
         </div>
 
         <div className={styles.when__img}>
-          <MouseParallax strength={-0.02}>
-            <Picture {...when.img} />
-          </MouseParallax>
+          <Picture {...when.img} />
         </div>
         <CustomButton
           className={styles.when__btn}
